@@ -4,6 +4,15 @@
     <string name="student_names">Jihyo Kim, Spencer Wilson</string>
     <string name="search_prompt">Enter a keyword and hit search to find news</string>
     <string name="search_button_text">Search</string>
+    <string name="search_results_title">Search Results</string>
+
+    <string-array name="test">
+        <item>Hello</item>
+        <item>World</item>
+        <item>Hello</item>
+        <item>World</item>
+    </string-array>
+
 
 
 </resources>
