@@ -7,7 +7,6 @@ import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 
 public class NewsSearchResult {
-
     @SerializedName("status")
     @Expose
     private String status;
