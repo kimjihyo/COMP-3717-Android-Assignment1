@@ -5,8 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ArrayAdapter;
+import android.view.View;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 
 import com.google.gson.Gson;
 
@@ -14,12 +15,16 @@ public class SearchResults extends AppCompatActivity {
     private final static String TAG = SearchResults.class.getSimpleName();
     public final static String ARTICLE = "ca.bcit.kim.wilson.comp_3717_android_assignment1_article";
     private ListView searchResultListView;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_results);
         searchResultListView = findViewById(R.id.search_results);
+        progressBar = findViewById(R.id.progressBar);
+
+
         MyAsyncTask task = new MyAsyncTask();
         task.setKeyword(getIntent().getStringExtra(MainActivity.KEYWORD));
         task.execute();
@@ -37,6 +42,7 @@ public class SearchResults extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+            progressBar.setVisibility(View.VISIBLE);
         }
 
         @Override
@@ -58,6 +64,7 @@ public class SearchResults extends AppCompatActivity {
             super.onPostExecute(result);
              ArticleAdapter articleAdapter= new ArticleAdapter(SearchResults.this, newsSearchResult.getArticles());
              searchResultListView.setAdapter(articleAdapter);
+             progressBar.setVisibility(View.GONE);
         }
     }
 }

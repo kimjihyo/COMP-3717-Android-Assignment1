@@ -10,27 +10,52 @@ public class Article {
     public String getAuthor() {
         return author;
     }
-    public void setAuthor(String author) {
-        this.author = author;
-    }
 
     @SerializedName("title")
     @Expose
     private String title;
     public String getTitle() {
+        if (this.title == null) {
+            return "N/A";
+        }
         return this.title;
-    }
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     @SerializedName("description")
     @Expose
     private String description;
     public String getDescription() {
+        if (this.description == null) {
+            return "N/A";
+        }
         return description;
     }
-    public void setDescription(String description) {
-        this.description = description;
+
+    @SerializedName("url")
+    @Expose
+    private String url;
+    public String getUrl() {
+        return this.url;
+    }
+
+    @SerializedName("urlToImage")
+    @Expose
+    private String urlToImage;
+    public String getUrlToImage() {
+        return urlToImage;
+    }
+
+    @SerializedName("publishedAt")
+    @Expose
+    private String publishedAt;
+    public String getPublishedAt() {
+        return publishedAt;
+    }
+
+    @SerializedName("content")
+    @Expose
+    private String content;
+    public String getContent() {
+        return content;
     }
 }
