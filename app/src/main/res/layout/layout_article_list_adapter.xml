@@ -2,8 +2,9 @@
 <LinearLayout
     android:id="@+id/layout_article_list_adapter"
     android:orientation="vertical"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <TextView
         android:id="@+id/article_title"
