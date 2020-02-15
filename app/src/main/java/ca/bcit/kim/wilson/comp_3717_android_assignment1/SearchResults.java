@@ -48,7 +48,7 @@ public class SearchResults extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... arg0) {
             HttpHandler sh = new HttpHandler();
-            String url = String.format("https://newsapi.org/v2/everything?q=%s&from=2020-02-01&sortBy=publishedAt&apiKey=5673ff6e2da2418db21fa3139df172b5", this.keyword);
+            String url = String.format("https://newsapi.org/v2/everything?q=%s&sortBy=publishedAt&apiKey=5673ff6e2da2418db21fa3139df172b5", this.keyword);
             // Making a request to url and getting response
             String jsonStr = sh.makeServiceCall(url);
 

@@ -10,6 +10,7 @@
     <string name="default_article_body">Default Article body</string>
     <string name="default_publish_date">Feb 1st, 2020</string>
     <string name="label_action_bar">News</string>
+    <string name="default_source">Source</string>
     <string name="article_image_content_description">An Image of Article</string>
     <string-array name="test">
         <item>Hello</item>
