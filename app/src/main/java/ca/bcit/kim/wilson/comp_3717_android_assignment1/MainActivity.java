@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent i = new Intent(this, SearchResults.class);
             i.putExtra(KEYWORD, keyword);
             startActivity(i);
+        } else {
+            Toast.makeText(this, "Please enter a keyword", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -38,6 +41,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button button = findViewById(R.id.search_button);
         button.setOnClickListener(this);
-
     }
 }

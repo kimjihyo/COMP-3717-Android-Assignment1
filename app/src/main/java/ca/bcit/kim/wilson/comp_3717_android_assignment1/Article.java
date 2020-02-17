@@ -4,10 +4,23 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Article {
+
+    public class Source {
+        @SerializedName("name")
+        @Expose
+        private String name;
+        public String getName() {
+            return this.name;
+        }
+    }
+
     @SerializedName("author")
     @Expose
     private String author;
     public String getAuthor() {
+        if (author == null) {
+            return "N/A";
+        }
         return author;
     }
 
@@ -29,6 +42,13 @@ public class Article {
             return "N/A";
         }
         return description;
+    }
+
+    @SerializedName("source")
+    @Expose
+    private Source source;
+    public Source getSource() {
+        return source;
     }
 
     @SerializedName("url")

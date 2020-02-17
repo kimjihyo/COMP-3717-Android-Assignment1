@@ -44,12 +44,18 @@ public class DetailsActivity extends AppCompatActivity {
         TextView articleBody = findViewById(R.id.article_body);
         TextView articleDescription = findViewById(R.id.article_description);
         TextView articlePublishedDate = findViewById(R.id.article_publish_date);
+        TextView articleSource = findViewById(R.id.article_source);
+        TextView articleSourceURL = findViewById(R.id.source_url);
 
         articleTitle.setText(article.getTitle());
         articleAuthor.setText(article.getAuthor());
         articleBody.setText(article.getContent());
         articleDescription.setText(article.getDescription());
         articlePublishedDate.setText(article.getPublishedAt());
+        articleSource.setText(article.getSource().getName());
+        articleSourceURL.setText(article.getUrl());
+
+        Log.i(TAG, article.getSource().getName());
 
         ImageDownloader downloader = new ImageDownloader();
         downloader.execute();
